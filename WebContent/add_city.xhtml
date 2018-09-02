@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+
+	<title>Add City</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+<h:messages globalOnly="true" style="color:red"/>
+
+	<h2>Add City</h2>
+<h:form >
+
+<h:panelGrid columns="3">
+	<h:outputLabel for="city">City Code:</h:outputLabel>
+			<h:inputText value="#{cityController.city.cityCode}" id="city" required="true"
+			requiredMessage="City Code is mandatory" label="City Code ">
+			<f:validateLength  maximum="3" />
+			</h:inputText>
+			<h:message for="city" style="color:red"></h:message>
+		
+		<h:outputLabel for="country">Country Code:</h:outputLabel>
+			<h:inputText value="#{cityController.city.countryCode}" id="country" required="true"
+			requiredMessage=" Country Code is mandatory" label="Country Code ">
+			<f:validateLength  maximum="3" />
+			</h:inputText>
+			<h:message for="country" style="color:red"></h:message>
+			
+				<h:outputLabel for="region">Region Code:</h:outputLabel>
+			<h:inputText value="#{cityController.city.regionCode}" id="region" required="true"
+			requiredMessage="Region Code is mandatory" label="Region Code">
+				<f:validateLength maximum="3" />
+			</h:inputText>
+			<h:message for="region" style="color:red"></h:message>
+		
+		
+				<h:outputLabel for="name">Name:</h:outputLabel>
+			<h:inputText value="#{cityController.city.cityName}" id="name" required="true"
+			requiredMessage=" Name is mandatory"></h:inputText>
+			<h:message for="name" style="color:red"></h:message>
+			
+				<h:outputLabel for="popl">Population:</h:outputLabel>
+			<h:inputText value="#{cityController.city.population}" id="popl" required="true"
+			requiredMessage="Only whole number" label="Population ">
+			 <f:convertNumber integerOnly="true"/>
+			 </h:inputText>
+			 <h:message for="popl" style="color:red"></h:message>
+			
+			<h:outputLabel for="sea">By The Sea:</h:outputLabel> <h:selectOneMenu id ="sea" value="#{cityController.city.byTheSea}">
+					  <f:selectItem itemValue="true" itemLabel="True"/>
+					  <f:selectItem itemValue="false" itemLabel="False"/>
+					  
+				</h:selectOneMenu>
+				 <h:message for="sea" style="color:red"></h:message>
+				
+			<h:outputLabel for="area">Area(KM):</h:outputLabel>
+			<h:inputText value="#{cityController.city.area}" id="area" required="true"
+			requiredMessage="Not a number" label="Area ">
+			<f:convertNumber minFractionDigits="2" />
+			 </h:inputText>
+			  <h:message for="area" style="color:red"></h:message>
+			
+		
+	</h:panelGrid>		
+	<br/>
+
+	<h:commandButton value="Add" action="#{cityController.addCity}" />
+
+</h:form>	
+<br/>
+		<h:outputLink value="index.xhtml">Home </h:outputLink><br/>
+		<h:outputLink value="list_cities.xhtml">Cities </h:outputLink>
+</h:body>
+</html>
+
+
+
+
+		

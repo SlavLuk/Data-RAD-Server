@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	  
+	
+
+<h:head>
+
+
+	<title>List Cities</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+	<h2>List Cities</h2>
+	<h:form>
+		<h:dataTable value="#{searchCityController.cityList}" var="c"
+			styleClass="table" headerClass="table-header"
+			rowClasses="table-odd-row,table-even-row" cellpadding="10">
+
+			<h:column>
+				<!-- column header -->
+				<f:facet name="header">City Code</f:facet>
+				<!-- row record -->
+    				#{c.cityCode}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">City Name</f:facet>
+    				#{c.cityName}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">Country</f:facet>
+    				#{c.country}
+    			</h:column>
+			<h:column>
+				<f:facet name="header">Region</f:facet>
+				#{c.region}
+				
+			</h:column>
+			<h:column>
+				<f:facet name="header">City Population</f:facet>
+				#{c.population}
+				
+			</h:column>
+				<h:column>
+				<f:facet name="header">By The Sea</f:facet>
+				#{c.coastal}
+				
+			</h:column>
+				<h:column>
+				<f:facet name="header">Area(KM)</f:facet>
+				#{c.area}
+				
+			</h:column>
+	
+		</h:dataTable>
+			
+	</h:form>
+	<h:outputLink value="index.xhtml">Home </h:outputLink>
+</h:body>
+</html>

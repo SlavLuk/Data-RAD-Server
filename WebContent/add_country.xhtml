@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+
+	<title>Add Country</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+<h:messages globalOnly="true" style="color:red"/>
+
+	<h2>Add Country</h2>
+<h:form >
+
+<h:panelGrid columns="3">
+	<h:outputLabel for="code">Code:</h:outputLabel>
+			<h:inputText value="#{countryController.country.countryCode}" id="code" required="true"
+			requiredMessage=" Code is mandatory" label="Code " >
+			<f:validateLength  maximum="3" />
+			</h:inputText>
+			<h:message for="code" style="color:red"></h:message>
+		
+		
+				<h:outputLabel for="name">Name:</h:outputLabel>
+			<h:inputText value="#{countryController.country.countryName}" id="name" required="true"
+			requiredMessage=" Name is mandatory"></h:inputText>
+			<h:message for="name" style="color:red"></h:message>
+		
+		
+					<h:outputLabel for="detail">Details:</h:outputLabel>
+			<h:inputText value="#{countryController.country.countryDetail}" id="detail"></h:inputText>
+			<br/>
+			<br/>
+		
+		<h:commandButton value="Add" action="#{countryController.add}" />
+		
+	</h:panelGrid>		
+
+
+
+</h:form>	
+<br/>
+		<h:outputLink value="index.xhtml">Home </h:outputLink><br/>
+		<h:outputLink value="list_countries.xhtml">Countries </h:outputLink>
+</h:body>
+</html>
+
+
+
+
+		

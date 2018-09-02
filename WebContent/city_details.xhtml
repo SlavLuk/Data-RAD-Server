@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+	<title>Full City Details</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+	<h2>Full City Details</h2>
+	<h3>City Code:  #{cityController.cityDetail.cityCode}</h3>
+	<h3>City Name: #{cityController.cityDetail.cityName}</h3>
+	<h3>Country:  #{cityController.cityDetail.country}</h3>
+	<h3>Region:  #{cityController.cityDetail.region}</h3>
+	<h3>City Population:  #{cityController.cityDetail.population}</h3>
+	<h3>By The Sea:  #{cityController.cityDetail.coastal}</h3>
+	<h3>Area(KM):  #{cityController.cityDetail.area}</h3>
+	
+		<h:outputLink value="index.xhtml">Home </h:outputLink><br/>
+		<h:outputLink value="list_cities.xhtml">Cities </h:outputLink>
+</h:body>
+</html>

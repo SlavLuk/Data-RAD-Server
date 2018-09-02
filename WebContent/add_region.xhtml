@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+
+	<title>Add Region</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+<h:messages globalOnly="true" style="color:red"/>
+
+	<h2>Add Region</h2>
+<h:form >
+
+<h:panelGrid columns="3">
+	<h:outputLabel for="country">Country Code:</h:outputLabel>
+			<h:inputText value="#{regionController.region.countryCode}" id="country" required="true"
+			requiredMessage=" Country Code is mandatory" label="Country Code">
+			<f:validateLength  maximum="3" />
+			</h:inputText>
+			<h:message for="country" style="color:red"></h:message>
+		
+		
+				<h:outputLabel for="region">Region Code:</h:outputLabel>
+			<h:inputText value="#{regionController.region.regionCode}" id="region" required="true"
+			requiredMessage=" Region Code is mandatory" label="Region Code">
+			<f:validateLength  maximum="3" />
+			</h:inputText>
+			<h:message for="region" style="color:red"></h:message>
+		
+		
+				<h:outputLabel for="name">Name:</h:outputLabel>
+			<h:inputText value="#{regionController.region.regionName}" id="name" required="true"
+			requiredMessage=" Name is mandatory"></h:inputText>
+			<h:message for="name" style="color:red"></h:message>
+			
+				<h:outputLabel for="desc">Description:</h:outputLabel>
+			<h:inputText value="#{regionController.region.regionDescr}" id="desc"></h:inputText>
+			
+
+		
+	</h:panelGrid>		
+	<br/>
+
+	<h:commandButton value="Add" action="#{regionController.addRegion}" />
+
+</h:form>	
+<br/>
+		<h:outputLink value="index.xhtml">Home </h:outputLink><br/>
+		<h:outputLink value="list_regions.xhtml">Regions </h:outputLink>
+</h:body>
+</html>
+
+
+
+
+		

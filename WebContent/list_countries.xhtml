@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+	<f:metadata>
+		<f:event type="preRenderView"
+			listener="#{countryController.loadCountryies}" />
+	</f:metadata>
+
+
+	<title>List Countries</title>
+	<h:outputStylesheet library="css" name="tables.css"  />
+</h:head>
+<h:body>
+<h:messages globalOnly="true" style="color:red"/>
+	<h2>List Countries</h2>
+	<h:form>
+		<h:commandButton value="Add Country" action="add_country" />
+		<h:dataTable value="#{countryController.countryList}" var="c"
+			styleClass="table" headerClass="table-header"
+			rowClasses="table-odd-row,table-even-row" cellpadding="10">
+
+			<h:column>
+				<!-- column header -->
+				<f:facet name="header">Country Code</f:facet>
+				<!-- row record -->
+    				#{c.countryCode}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">Country Name</f:facet>
+    				#{c.countryName}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">Country Detail</f:facet>
+    				#{c.countryDetail}
+    			</h:column>
+			<h:column>
+				<f:facet name="header">Action</f:facet>
+				<h:commandLink value="Update" action="#{countryController.getUpdatePage(c)}" />
+			
+				<br />
+				<h:commandLink value="Delete" action = "#{countryController.delete(c)}" onclick="if (! confirm('Delete this Country?')) return false"/>
+			</h:column>
+
+
+		</h:dataTable>
+	</h:form>
+	<h:outputLink value="index.xhtml">Home </h:outputLink>
+</h:body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+	<f:metadata>
+		<f:event type="preRenderView"
+			listener="#{countryController.loadCountryies}" />
+	</f:metadata>
+
+
+	<title>City Details</title>
+</h:head>
+<h:body>
+	<h1>Full City Details</h1>
+	<h2>City Code:<h:outputText value="#{user.text}" /></h2>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+<h:outputLink value="index.xhtml">Home </h:outputLink><br/>
+<h:outputLink value="list_cities.xhtml">Cities </h:outputLink>
+</h:body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+
+	<title>Add Head of State</title>
+	<h:outputStylesheet library="css" name="tables.css" />
+</h:head>
+<h:body>
+	<h:messages globalOnly="true" style="color:red" />
+
+	<h2>Add Head of State</h2>
+	<h:form>
+
+		<h:panelGrid columns="3">
+			<h:outputLabel for="city">Country Code:</h:outputLabel>
+			<h:inputText value="#{headStateController.head._id}" id="city"
+				required="true" requiredMessage="Country Code is mandatory"
+				label="Head Of State">
+				<f:validateLength maximum="3" />
+			</h:inputText>
+			<h:message for="city" style="color:red"></h:message>
+
+			<h:outputLabel for="country">Head of State:</h:outputLabel>
+			<h:inputText value="#{headStateController.head.headOfState}"
+				id="country" required="true"
+				requiredMessage="Head of State is mandatory"></h:inputText>
+			<h:message for="country" style="color:red"></h:message>
+
+		</h:panelGrid>
+		<br />
+
+		<h:commandButton value="Add" action="#{headStateController.addHead}" />
+
+	</h:form>
+	<br />
+	<h:outputLink value="index.xhtml">Home </h:outputLink>
+	<br />
+	<h:outputLink value="list_head_of_state.xhtml">Heads of State</h:outputLink>
+</h:body>
+</html>
+
+
+
+
